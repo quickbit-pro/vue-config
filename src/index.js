@@ -2,6 +2,7 @@ import Config from './config';
 
 export default {
     install(Vue, options) {
-        Vue.prototype.$config = new Config(options.config || {});
+        const app = Vue.createApp(App);
+        app.provide('$config', new Config(options.config || {}));
     }
 };
