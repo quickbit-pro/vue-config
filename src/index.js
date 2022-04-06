@@ -1,8 +1,7 @@
 import Config from './config';
 
 export default {
-    install(Vue, options) {
-        const app = Vue.createApp(App);
+    install(app, options) {
         app.provide('$config', new Config(options.config || {}));
     }
 };
